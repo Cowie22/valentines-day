@@ -7,10 +7,11 @@ import styles from './page.module.css'
 
 import { useAppContext } from '@/contexts/state'
 
-import ArrowRight from '@/components/Svgs/ArrowRight'
+import HeartIcon from '@/components/Svgs/HeartIcon'
 
 const HomeContent = () => {
-  const { updateCurrentPage } = useAppContext()
+  const { updateCurrentPage, btnFleeCount, incrementBtnFleeCount, updateInterstitial } =
+    useAppContext()
   const noBtnRef = useRef<HTMLButtonElement | null>(null)
   const coolDownRef = useRef(false)
   const coolDownTimerRef = useRef<number | null>(null)
@@ -20,13 +21,21 @@ const HomeContent = () => {
   }, [updateCurrentPage])
 
   useEffect(() => {
+    if (btnFleeCount > 5) {
+      updateInterstitial(true)
+    } else {
+      updateInterstitial(false)
+    }
+  }, [btnFleeCount, updateInterstitial])
+
+  useEffect(() => {
     const COOLDOWN_MS = 450
     const TRIGGER_DISTANCE = 220
     const MIN_DISTANCE_AFTER_JUMP = 180
     const MAX_TRIES = 12
     const padding = 20
 
-    const startCooldown = () => {
+    const startCoolDown = () => {
       coolDownRef.current = true
       if (coolDownTimerRef.current) window.clearTimeout(coolDownTimerRef.current)
 
@@ -75,7 +84,9 @@ const HomeContent = () => {
       btn.style.left = `${x}px`
       btn.style.top = `${y}px`
 
-      startCooldown()
+      incrementBtnFleeCount()
+
+      startCoolDown()
     }
 
     window.addEventListener('mousemove', handleMouseMove)
@@ -95,7 +106,7 @@ const HomeContent = () => {
               <Row>
                 <Col lg={{ span: 10, offset: 1 }}>
                   <div className={styles.home_hero_content_container}>
-                    <h1 className='black text-center'>
+                    <h1 className='hot-pink text-center'>
                       WILL YOU BE <br /> MY VALENTINE?
                     </h1>
                     <Row>
@@ -103,17 +114,17 @@ const HomeContent = () => {
                         <div className={styles.btn_selection_container}>
                           <div className={styles.btn_container}>
                             <Link href='/sign-up/'>
-                              <button className='cta-btn blue-btn'>
+                              <button className='cta-btn love-btn'>
                                 YES
-                                <ArrowRight />
+                                <HeartIcon />
                               </button>
                             </Link>
                           </div>
                           <div className={styles.btn_container}>
                             <Link href='/sign-up/'>
-                              <button className='cta-btn blue-btn' ref={noBtnRef}>
+                              <button className='cta-btn love-btn' ref={noBtnRef}>
                                 NO
-                                <ArrowRight />
+                                <HeartIcon />
                               </button>
                             </Link>
                           </div>

@@ -10,29 +10,23 @@
   align-items: center;
   z-index: 9999;
   .interstitial_container {
-    background: Var(--white);
+    background-image: image-set(
+      url('/img/components/Interstitial/valentine-puppy-popup-img.webp') type('image/webp'),
+      url('/img/components/Interstitial/valentine-puppy-popup-img.png') type('image/png')
+    );
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 48px;
+    padding: 40px 80px 80px 80px;
+    height: 800px;
     text-align: center;
-    & p {
-      &:first-of-type {
-        margin-bottom: 24px;
-      }
-    }
+    animation: puppySlideIn 2s cubic-bezier(0.18, 0.9, 0.32, 1.2) forwards;
     .btn_container {
       display: flex;
       justify-content: center;
       align-items: center;
       padding-top: 48px;
-      & button {
-        width: 140px;
-        margin-right: 32px;
-      }
-      & a {
-        & button {
-          margin-right: 0;
-        }
-      }
     }
   }
 }
@@ -47,5 +41,25 @@
         }
       }
     }
+  }
+}
+
+@keyframes puppySlideIn {
+  0% {
+    transform: translateY(-160vh) scale(0.9);
+    opacity: 0;
+  }
+  65% {
+    transform: translateY(90px) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-30px) scale(0.98);
+  }
+  92% {
+    transform: translateY(10px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
   }
 }

@@ -13,7 +13,10 @@ interface AppContextState {
   currentPage: string
   updateCurrentPage: (val: string) => void
   interstitialVisible: boolean
-  hideInterstitial: () => void
+  updateInterstitial: (val: boolean) => void
+  btnFleeCount: number
+  incrementBtnFleeCount: () => void
+  resetBtnFleeCount: () => void
 }
 
 const AppContext = createContext<AppContextState | undefined>(undefined)
@@ -24,22 +27,32 @@ interface AppWrapperProps {
 
 const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
   const [currentPage, handleCurrentPage] = useState<string>('')
-  const [interstitialVisible, setInterstitialVisible] = useState<boolean>(true)
+  const [interstitialVisible, setInterstitialVisible] = useState<boolean>(false)
+  const [btnFleeCount, setBtnFleeCount] = useState(0)
 
   // Handle the current page of the site
   const updateCurrentPage = useCallback((val: string) => {
     handleCurrentPage(val)
   }, [])
 
-  const hideInterstitial = useCallback(() => {
-    setInterstitialVisible(false)
+  const updateInterstitial = useCallback((val: boolean) => {
+    setInterstitialVisible(val)
   }, [])
+
+  const incrementBtnFleeCount = useCallback(() => {
+    setBtnFleeCount((prev) => prev + 1)
+  }, [])
+
+  const resetBtnFleeCount = useCallback(() => setBtnFleeCount(0), [])
 
   const sharedState: AppContextState = {
     currentPage,
     updateCurrentPage,
     interstitialVisible,
-    hideInterstitial,
+    updateInterstitial,
+    btnFleeCount,
+    incrementBtnFleeCount,
+    resetBtnFleeCount,
   }
 
   return <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>

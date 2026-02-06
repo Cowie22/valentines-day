@@ -10,12 +10,35 @@
   --dark-red: #4b130d;
   --grey: #6d6e71;
   --light-grey: #95989a;
+
+   /* 🌸 Primary Romance */
+  --rose: #ff6f91;
+  --blush: #ffc2d1;
+  --soft-pink: #ffe3ec;
+
+  /* 🐶 Cozy / Cute */
+  --cream: #fff6e9;
+  --peach: #ffb7a5;
+
+  /* 💌 Accent Love Colors */
+  --heart: #ff3b6b;
+  --hot-pink: #ff4fa3;
+
+  /* 🌙 Soft Contrast */
+  --plum: #5a3d5c;
+  --chocolate: #4a2c2a;
+
+  /* ☁️ Backgrounds */
+  --cloud: #fff8fb;
+  --mist: #f3f5f7;
   --white: #ffffff;
   --black: #000000;
+  --text-dark: #2e2a2f;
+  --text-light: #6b6470;
 }
 
 /* Fonts */
 :root {
-  --museo: 'museo', serif;
-  --sans: 'museo-sans', sans-serif;
+  --script: var(--font-script);
+  --sans: var(--font-sans);
 }

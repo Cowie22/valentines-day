@@ -8,15 +8,22 @@ import './globals.css'
 import React from 'react'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { AppWrapper } from '../contexts/state'
-import { Roboto } from 'next/font/google'
+import { Poppins, Sacramento } from 'next/font/google'
 
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Interstitial from '../components/Interstitial/Interstitial'
 
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
+  variable: '--font-ui',
+})
+
+const sacramento = Sacramento({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-romantic',
 })
 
 export default function RootLayout({
@@ -26,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <AppWrapper>
-      <html lang='en' className={roboto.className}>
+      <html lang='en' className={`${poppins.variable} ${sacramento.variable}`}>
         <GoogleTagManager gtmId='' />
         <head>
           <link rel='stylesheet' href='https://use.typekit.net/hig7rsm.css'></link>

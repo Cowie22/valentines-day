@@ -1,6 +1,7 @@
 .home_container {
   height: 100vh;
   .home_hero_container {
+    position: relative;
     height: 100vh;
     background-image: image-set(
       url('/img/pages/home/puppy-bg-img.webp') type('image/webp'),
@@ -9,8 +10,27 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      /* soft dark-to-light overlay so the center reads */
+      background: linear-gradient(
+        180deg,
+        rgba(90, 61, 92, 0.35) 0%,
+        rgba(255, 255, 255, 0.1) 45%,
+        rgba(90, 61, 92, 0.25) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
     .home_hero_content_container {
       padding: 248px 0;
+      position: relative;
+      z-index: 2;
+      h1 {
+        color: var(--plum);
+      }
       .btn_selection_container {
         padding-top: 64px;
         display: flex;

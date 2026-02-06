@@ -4,7 +4,7 @@ import { useAppContext } from '@/contexts/state'
 import styles from './Interstitial.module.css'
 
 const Interstitial: React.FC = () => {
-  const { interstitialVisible, hideInterstitial } = useAppContext()
+  const { interstitialVisible, updateInterstitial, resetBtnFleeCount } = useAppContext()
 
   if (!interstitialVisible) {
     return null
@@ -16,20 +16,19 @@ const Interstitial: React.FC = () => {
         <Row>
           <Col lg={{ span: 8, offset: 2 }}>
             <div className={styles.interstitial_container}>
-              <p className='black bold text-center'>
-                The information contained in this site is intended for US healthcare professionals
-                only.
-              </p>
-              <p className='black bold text-center'>
-                Click OK below if you are a US healthcare professional.
-              </p>
+              <h1 className='heart text-center'>
+                SAY NO ONE MORE TIME!
+              </h1>
               <div className={styles.btn_container}>
-                <button className='cta-btn orange-btn' onClick={hideInterstitial}>
+                <button
+                  className='cta-btn orange-btn'
+                  onClick={() => {
+                    updateInterstitial(false)
+                    resetBtnFleeCount()
+                  }}
+                >
                   OK
                 </button>
-                <a href='#' target='_blank' rel='noopener noreferrer'>
-                  <button className='cta-btn orange-btn'>Cancel</button>
-                </a>
               </div>
             </div>
           </Col>
