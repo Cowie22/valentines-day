@@ -1,0 +1,44 @@
+.sign_up_callout_container {
+  width: 100%;
+  background-color: var(--cloud);
+  background-image: url('/img/components/SignUpCallout/sign-up-callout-bg-img.png');
+  background-image: image-set(
+    url('/img/components/SignUpCallout/sign-up-callout-bg-img.webp') type("image/webp"),
+    url('/img/components/SignUpCallout/sign-up-callout-bg-img.png') type("image/png")
+  );
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  .sign_up_callout_content_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 96px 0;
+    & h2 {
+      margin-bottom: 24px;
+    }
+    & a {
+      & button {
+        font-size: 22px;
+        line-height: normal;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .sign_up_callout_container {
+    background-size: 500% auto;
+    .sign_up_callout_content_container {
+      padding: 128px 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .sign_up_callout_container {
+    background-size: 250% auto;
+  }
+}

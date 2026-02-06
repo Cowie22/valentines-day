@@ -1,0 +1,20 @@
+.thank_you_container {
+  padding: 96px 0;
+  background-image: url('/img/global/plus-bg-img.png');
+  background-image: image-set(
+    url('/img/global/plus-bg-img.webp') type("image/webp"),
+    url('/img/global/plus-bg-img.png') type("image/png")
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--light-blue);
+}
+
+@media only screen and (max-width: 991px) {
+  .thank_you_container {
+    padding: 96px 0;
+    background-size: 300% auto;
+    background-repeat: repeat;
+  }
+}

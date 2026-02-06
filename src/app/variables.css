@@ -1,0 +1,21 @@
+/* Primary colors */
+:root {
+  --blue: #375271;
+  --light-blue: #8ab3c1;
+  --dark-blue: #1b2b40;
+  --cloud: #e6f0f0;
+  --orange: #ef3824;
+  --pink: #ff0080;
+  --red: #b52717;
+  --dark-red: #4b130d;
+  --grey: #6d6e71;
+  --light-grey: #95989a;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* Fonts */
+:root {
+  --museo: 'museo', serif;
+  --sans: 'museo-sans', sans-serif;
+}

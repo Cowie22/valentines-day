@@ -1,0 +1,26 @@
+.hero_banner_container {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .hero_banner_title_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 56px 0;
+     & h1 {
+
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero_banner_container {
+    .hero_banner_title_container {
+      padding: 34px 0;
+      & h1 {
+
+      }
+    }
+  }
+}

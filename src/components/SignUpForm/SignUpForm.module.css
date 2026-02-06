@@ -1,0 +1,106 @@
+.sign_up_form_container {
+  width: 100%;
+  padding-top: 64px;
+  & label {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 24px;
+    height: 100%;
+    & p {
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
+    }
+    & input {
+      background: var(--cloud);
+      border: 1px solid var(--light-blue);
+      padding: 12px 8px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 300;
+      outline: none;
+    }
+    .error_container {
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      border: 1px solid rgb(255, 60, 60);
+      background: rgb(250, 233, 233);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      & p {
+        margin: 0 0 0 8px;
+        font-size: 14px;
+        color: rgb(21, 35, 43);
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+  .consent_copy_container {
+    & label {
+      flex-direction: row;
+      align-items: center;
+      & input[type='checkbox'] {
+        -webkit-appearance: none;
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgb(138, 179, 193);
+        background: rgb(230, 240, 240);
+        position: relative;
+        padding: 8px 12px;
+        transition: 0.5s all;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      & input[type='checkbox']:checked {
+        border: 1px solid rgb(41, 50, 56);
+        background: rgb(41, 50, 56);
+        transition: 0.5s all;
+      }
+      & input[type='checkbox']:checked::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 16px;
+        height: 16px;
+        background: url('data:image/svg+xml;utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%20765.2%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M960%2C233.4L468.2%2C725.1c-53.4%2C53.4-140%2C53.4-193.3%2C0L40%2C490.3c-53.4-53.4-53.4-140%2C0-193.3c53.4-53.4%2C140-53.4%2C193.3%2C0%09l138.2%2C138.2L766.6%2C40c53.4-53.4%2C140-53.4%2C193.3%2C0C1013.3%2C93.4%2C1013.3%2C180%2C960%2C233.4z%22%2F%3E%3C%2Fsvg%3E')
+          no-repeat center center;
+        background-size: contain;
+      }
+      & p {
+        margin-left: 24px;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+  .submit_btn_container {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & button {
+      border: 1px solid rgb(239, 56, 36);
+      &.disabled_btn {
+        pointer-events: none;
+        background: rgb(246, 189, 182);
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .submit_btn_container {
+    & button {
+      width: 80%;
+    }
+  }
+}

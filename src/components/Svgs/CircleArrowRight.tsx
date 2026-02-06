@@ -1,0 +1,14 @@
+import { memo } from 'react'
+
+const CircleArrowRight = () => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' width={18} height={18} viewBox='0 0 768 768'>
+      <path
+        d='M384 640.5q105 0 180.75-75.75T640.5 384t-75.75-180.75T384 127.5t-180.75 75.75T127.5 384t75.75 180.75T384 640.5zm0-576q132 0 225.75 93.75T703.5 384t-93.75 225.75T384 703.5t-225.75-93.75T64.5 384t93.75-225.75T384 64.5zM319.5 528V240l192 144z'
+        strokeWidth={40}
+      />
+    </svg>
+  )
+}
+
+export default memo(CircleArrowRight)

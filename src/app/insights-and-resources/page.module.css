@@ -1,0 +1,162 @@
+.insights_and_resources_container {
+  .training_container {
+    padding-top: 96px;
+    .training_content_container {
+      border-bottom: 1px solid var(--light-blue);
+      padding-bottom: 96px;
+      .content_container {
+        & h2 {
+          margin-bottom: 24px;
+        }
+        & p {
+          font-size: 18px;
+          line-height: 28px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+
+  .access_support_container {
+    padding: 96px 0 0 0;
+    background-image: url('/img/global/plus-bg-img.png');
+    background-image: image-set(
+      url('/img/global/plus-bg-img.webp') type("image/webp"),
+      url('/img/global/plus-bg-img.png') type("image/png")
+    );
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .content_container {
+      & h2 {
+        margin-bottom: 24px;
+      }
+      & p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 24px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .bottom_content_container {
+      border-bottom: 1px solid var(--light-blue);
+      padding: 64px 0;
+      & p {
+        &:first-of-type {
+          font-size: 18px;
+          line-height: 28px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+
+  .webinars_container {
+    padding: 96px 0;
+    .webinars_content_container {
+      .content_container {
+        & h2,
+        & p {
+          margin-bottom: 24px;
+        }
+        & h3 {
+          margin: 32px 0 24px 0;
+          &:first-of-type {
+            margin-top: 24px;
+          }
+        }
+        & p {
+          font-size: 18px;
+          line-height: 28px;
+        }
+        & a {
+          transition: 0.5s all;
+          & svg {
+            margin-right: 10px;
+            transition: 0.5s all;
+            & path {
+              fill: var(--blue);
+              stroke: var(--blue);
+              transition: 0.5s all;
+            }
+          }
+          &:hover {
+            color: var(--orange);
+            transition: 0.5s all;
+            & svg {
+              & path {
+                fill: var(--orange);
+                stroke: var(--orange);
+                transition: 0.5s all;
+              }
+            }
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+        .btn_container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .insights_and_resources_container {
+    .training_container {
+      padding: 72px 0;
+      .training_content_container {
+        padding-bottom: 72px;
+        .content_container {
+          & h2 {
+            margin-top: 32px;
+          }
+          & p {
+            font-size: 16px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+
+    .access_support_container {
+      padding: 0;
+      background-size: 300% auto;
+      background-repeat: repeat;
+      .content_container {
+        padding-bottom: 24px;
+        & p {
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+      .bottom_content_container {
+        & p {
+          &:first-of-type {
+            font-size: 16px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+
+    .webinars_container {
+      padding: 72px 0;
+      .webinars_content_container {
+        .content_container {
+          & p {
+            font-size: 16px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}

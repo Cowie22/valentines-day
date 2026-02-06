@@ -1,0 +1,51 @@
+.interstitial_overlay_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  .interstitial_container {
+    background: Var(--white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 48px;
+    text-align: center;
+    & p {
+      &:first-of-type {
+        margin-bottom: 24px;
+      }
+    }
+    .btn_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 48px;
+      & button {
+        width: 140px;
+        margin-right: 32px;
+      }
+      & a {
+        & button {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .interstitial_overlay_container {
+    .interstitial_container {
+      padding: 24px;
+      .btn_container {
+        & button {
+          width: 130px;
+        }
+      }
+    }
+  }
+}

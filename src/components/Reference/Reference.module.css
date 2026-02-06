@@ -1,0 +1,36 @@
+.references_list_container {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--light-blue);
+  background-image: url('/img/global/plus-bg-img.png');
+  background-image: image-set(
+    url('/img/global/plus-bg-img.webp') type("image/webp"),
+    url('/img/global/plus-bg-img.png') type("image/png")
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & ol {
+    margin-bottom: 0;
+
+    & li {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 500;
+      color: var(--blue);
+      overflow-wrap: break-word;
+
+      &::marker {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .references_list_container {
+    padding: 72px 0;
+    background-size: 300% auto;
+    background-repeat: repeat;
+  }
+}

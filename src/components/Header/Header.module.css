@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background: var(--white);
+  z-index: 10;
+  .header_upper_banner_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 0;
+    background: rgba(109, 110, 113, 0.15);
+    .banner_content_container {
+      & p {
+        font-size: 14px;
+        line-height: normal;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  
+}

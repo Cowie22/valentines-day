@@ -1,0 +1,28 @@
+.home_container {
+  .home_hero_container {
+    background-image: url('/img/pages/home/home-hero-bg.avif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .home_hero_content_container {
+      padding: 248px 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .home_container {
+    .home_hero_container {
+      height: 650px;
+      background-image: url('/img/pages/home/home-hero-bg.avif');
+      .home_hero_content_container {
+        padding: 48px 0 248px 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

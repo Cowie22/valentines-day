@@ -1,0 +1,403 @@
+@import url('./variables.css');
+
+/* Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 1rem;
+  margin: 0;
+  overflow-x: hidden;
+
+  &.scroll-none {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &.modal-hidden {
+    overflow: hidden;
+  }
+}
+
+/* 
+  Following two classes account for the fixed header, so that it doesn't cover up pertinent content
+  top_page_content_container ensures beginning page content is not covered by header
+  scroll_to_container ensures IDs that are scrolled to are not covered by header
+*/
+
+.top_page_content_container {
+  padding-top: 110px;
+  @media only screen and (max-width: 991px) {
+    padding-top: 98px;
+  }
+}
+
+.scroll_to_container {
+  scroll-margin-top: 110px;
+  @media only screen and (max-width: 991px) {
+    scroll-margin-top: 98px;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: var(--sans);
+  color: var(--blue);
+
+  &:visited {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+h1,
+.h1 {
+  font-family: var(--museo);
+  font-style: normal;
+  font-size: 54px;
+  line-height: 64px;
+  font-weight: 900;
+  color: var(--blue);
+  margin: 0;
+
+  @media only screen and (max-width: 991px) {
+    font-size: 36px;
+    line-height: 46px;
+  }
+}
+
+h2,
+.h2 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 38px;
+  line-height: 48px;
+  font-weight: 300;
+  color: var(--blue);
+  margin: 0;
+
+  @media only screen and (max-width: 991px) {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+h3,
+.h3 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0;
+
+  @media only screen and (max-width: 991px) {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+h4,
+.h4 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0;
+}
+
+h5,
+.h5 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 300;
+  color: var(--blue);
+  margin: 0;
+}
+
+h6,
+.h6 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--blue);
+  margin: 0;
+}
+
+p,
+.body-copy {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--blue);
+  margin: 0;
+}
+
+.sans {
+  font-family: var(--sans);
+}
+
+.museo {
+  font-family: var(--museo);
+}
+
+.light {
+  font-weight: 300;
+}
+
+.normal {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.extra-bold {
+  font-weight: 900;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.light-blue {
+  color: var(--light-blue);
+}
+
+.dark-blue {
+  color: var(--dark-blue);
+}
+
+.cloud {
+  color: var(--cloud);
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.red {
+  color: var(--red);
+}
+
+.dark-red {
+  color: var(--dark-red);
+}
+
+.grey {
+  color: var(--grey);
+}
+
+.light-grey {
+  color: var(--light-grey);
+}
+
+.white {
+  color: var(--white);
+}
+
+.black {
+  color: var(--black);
+}
+
+sup {
+  font-size: 50%;
+  top: -0.79em;
+}
+
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: 0em;
+}
+
+.cta-btn {
+  color: var(--white);
+  border: none;
+  width: 255px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  display: block;
+  min-height: fit-content;
+  text-align: center;
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 26px;
+  transition: all 0.5s;
+  outline: none !important;
+
+  &.btn-full {
+    width: 100%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s;
+    transition-delay: 0.2s;
+  }
+
+  &:visited {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.orange-btn {
+  background: var(--orange);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-left: 8px;
+    > * {
+      stroke: var(--white);
+      transition: all 0.5s;
+    }
+  }
+
+  &:hover {
+    background: var(--red);
+    color: var(--white);
+    svg {
+      > * {
+        stroke: var(--dark-red);
+        fill: var(--dark-red);
+        transition: all 0.5s;
+        transition-delay: 0.2s;
+      }
+    }
+  }
+
+  &:active {
+    background: var(--red);
+    color: var(--white);
+  }
+}
+
+.blue-btn {
+  background: var(--dark-blue);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-left: 8px;
+    > * {
+      stroke: var(--white);
+      transition: all 0.5s;
+    }
+  }
+
+  &:hover {
+    background: var(--light-blue);
+    color: var(--dark-blue);
+    svg {
+      > * {
+        stroke: var(--dark-blue);
+        fill: var(--dark-blue);
+        transition: all 0.5s;
+        transition-delay: 0.2s;
+      }
+    }
+  }
+
+  &:active {
+    background: var(--light-blue);
+    color: var(--white);
+  }
+}
+
+.white-btn {
+  background: var(--white);
+  color: var(--dark-blue);
+  opacity: 0.7;
+  border: 1px solid var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: var(--white);
+    color: var(--dark-blue);
+    opacity: 1;
+  }
+
+  &:active {
+    background: var(--white);
+    color: var(--dark-blue);
+    opacity: 1;
+  }
+}
+
+.blue-ul-solid-circle,
+.orange-ul-solid-circle,
+.black-ul-solid-circle {
+  list-style-type: disc;
+  padding: 0 0 0 40px;
+  margin: 0;
+
+  li {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 8px;
+    color: var(--blue);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &::marker {
+      color: var(--blue);
+    }
+  }
+}
+
+.orange-ul-solid-circle {
+  li {
+    &::marker {
+      color: var(--orange);
+    }
+  }
+}
+
+.black-ul-solid-circle {
+  li {
+    color: var(--black);
+    &::marker {
+      color: var(--black);
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+.sign_up_container {
+  padding: 92px 0;
+  background-image: url('/img/global/plus-bg-img.png');
+  background-image: image-set(
+    url('/img/global/plus-bg-img.webp') type("image/webp"),
+    url('/img/global/plus-bg-img.png') type("image/png")
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--light-blue);
+  & h1 {
+    margin-bottom: 48px;
+  }
+  .sign_up_form_container {
+    & iframe {
+      width: 100%;
+      min-height: 1400px;
+      height: fit-content;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .sign_up_container {
+    padding: 96px 0;
+    background-size: 300% auto;
+    background-repeat: repeat;
+    .sign_up_form_container {
+      
+    }
+  }
+}
