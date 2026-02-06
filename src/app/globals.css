@@ -28,12 +28,12 @@ body {
   scroll_to_container ensures IDs that are scrolled to are not covered by header
 */
 
-.top_page_content_container {
+/* .top_page_content_container {
   padding-top: 110px;
   @media only screen and (max-width: 991px) {
     padding-top: 98px;
   }
-}
+} */
 
 .scroll_to_container {
   scroll-margin-top: 110px;

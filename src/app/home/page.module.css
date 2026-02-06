@@ -1,14 +1,26 @@
 .home_container {
+  height: 100vh;
   .home_hero_container {
-    background-image: url('/img/pages/home/home-hero-bg.avif');
+    height: 100vh;
+    background-image: image-set(
+      url('/img/pages/home/puppy-bg-img.webp') type('image/webp'),
+      url('/img/pages/home/puppy-bg-img.png') type('image/png')
+    );
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     .home_hero_content_container {
       padding: 248px 0;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      .btn_selection_container {
+        padding-top: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .btn_container {
+          transition: all 0.5s;
+        }
+      }
     }
   }
 }
@@ -16,8 +28,6 @@
 @media only screen and (max-width: 991px) {
   .home_container {
     .home_hero_container {
-      height: 650px;
-      background-image: url('/img/pages/home/home-hero-bg.avif');
       .home_hero_content_container {
         padding: 48px 0 248px 0;
         align-items: flex-start;

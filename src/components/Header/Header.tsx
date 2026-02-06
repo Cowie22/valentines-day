@@ -7,7 +7,7 @@ import MainNavMobile from './MainNavMobile/MainNavMobile'
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header}`}>
       <section className={styles.header_upper_banner_container}>
         <Container>
           <Row>
