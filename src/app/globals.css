@@ -223,8 +223,6 @@ p,
   color: var(--black);
 }
 
-
-
 .rose {
   color: var(--rose);
 }
@@ -280,7 +278,6 @@ p,
 .text-light {
   color: var(--text-light);
 }
-
 
 sup {
   font-size: 50%;
@@ -396,19 +393,20 @@ sub {
 }
 
 .love-btn {
-  background: var(--heart); /* punchier than rose */
+  background: var(--heart);
   color: var(--white);
   border: 2px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
-
   box-shadow:
     0 14px 35px rgba(255, 59, 107, 0.28),
     0 6px 14px rgba(27, 10, 33, 0.18);
-
   transform: translateY(0);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 
   svg {
     margin: 0 0 4px 16px;
@@ -423,7 +421,7 @@ sub {
   &:hover {
     background: var(--blush);
     color: var(--plum);
-    transform: translateY(-2px);
+    transform: translateY(-8px);
 
     box-shadow:
       0 18px 45px rgba(90, 61, 92, 0.22),
@@ -442,7 +440,6 @@ sub {
     color: var(--white);
   }
 }
-
 
 .white-btn {
   background: var(--white);
@@ -508,4 +505,3 @@ sub {
     }
   }
 }
-
